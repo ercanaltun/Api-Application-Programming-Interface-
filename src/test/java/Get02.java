@@ -24,15 +24,15 @@ public class Get02 {
      */
 
     @Test
-    public void get01(){
+    public void get01() {
         //  i)  Set the URL
-        String url= " https://restful-booker.herokuapp.com/booking/1";
+        String url = " https://restful-booker.herokuapp.com/booking/1";
 
         // ii) Set the expected Data (beklenen datanin olusturulmasi, Post, Put, Patch)
 
         // iii) Type code to send request ( Talep gondermek icin kod yazimi)
 
-        Response response=given().when().get(url);
+        Response response = given().when().get(url);
         response.prettyPrint();
 
         // iv) Do Assertion (dogrulama yapmak)
@@ -43,7 +43,7 @@ public class Get02 {
         // Body'nin Techproed icermedigi testi yapiliyor
         assertFalse(response.asString().contains("TechProEd"));
         // Server'in Cowboy olup olmadigini test ediyoruz
-        assertEquals("Cowboy",response.getHeader("Server"));
+        assertEquals("Cowboy", response.getHeader("Server"));
 
     }
 
