@@ -1,7 +1,7 @@
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 public class Get01 {
 /*
@@ -54,6 +54,25 @@ public class Get01 {
         // iv) Do Assertion (dogrulama yapmak)
 
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
+        //Status Code konsolda yazdırın
+        System.out.println("Status Code = " + response.getStatusCode());
+
+        //Content Type konsolda yazdırın
+        System.out.println("Content Type ="+response.getContentType());
+
+        //Status Line konsolda yazdırın
+        System.out.println("konsolda yazdırın ="+response.getStatusLine());
+
+        //Header konsolda yazdıralım=>Header postman den alınıyor.
+        // Hangi başlık isteniyorsa o yazdırılır
+        System.out.println("Header :"+response.getHeader("Server"));
+
+        //Headers konsolda yazdıralım=>Headers'lar postman den alınıyor.
+
+        System.out.println("Headers :"+response.getHeaders());
+
+        //Ne kadar sürede kodlar run edildi görmek için
+        System.out.println("Time :"+response.getTime());
 
     }
 
