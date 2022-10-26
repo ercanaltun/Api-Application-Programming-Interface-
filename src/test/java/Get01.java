@@ -48,7 +48,7 @@ public class Get01 {
         // ii) Set the expected Data (beklenen datanin olusturulmasi, Post, Put, Patch)
         // Bizden post, put ya da patch istenmedigi icin bu case de kullanmayacagiz.
         // iii) Type code to send request ( Talep gondermek icin kod yazimi)
-        Response response=given().when().get(url);
+        Response response = given().when().get(url);
         response.prettyPrint();
 
         // iv) Do Assertion (dogrulama yapmak)
@@ -58,21 +58,21 @@ public class Get01 {
         System.out.println("Status Code = " + response.getStatusCode());
 
         //Content Type konsolda yazdırın
-        System.out.println("Content Type ="+response.getContentType());
+        System.out.println("Content Type =" + response.getContentType());
 
         //Status Line konsolda yazdırın
-        System.out.println("konsolda yazdırın ="+response.getStatusLine());
+        System.out.println("konsolda yazdırın =" + response.getStatusLine());
 
         //Header konsolda yazdıralım=>Header postman den alınıyor.
         // Hangi başlık isteniyorsa o yazdırılır
-        System.out.println("Header :"+response.getHeader("Server"));
+        System.out.println("Header :" + response.getHeader("Server"));
 
         //Headers konsolda yazdıralım=>Headers'lar postman den alınıyor.
 
-        System.out.println("Headers :"+response.getHeaders());
+        System.out.println("Headers :" + response.getHeaders());
 
         //Ne kadar sürede kodlar run edildi görmek için
-        System.out.println("Time :"+response.getTime());
+        System.out.println("Time :" + response.getTime());
 
     }
 
