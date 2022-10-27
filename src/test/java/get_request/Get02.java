@@ -38,13 +38,17 @@ public class Get02 {
         response.prettyPrint();
 
         // iv) Do Assertion (dogrulama yapmak)
+        //statusCode ve statusLine doğrulama:
+        response.then().assertThat().statusCode(404)
+                .statusLine("HTTP/1.1 404 Not Found");
 
-        response.then().assertThat().statusCode(404).statusLine("HTTP/1.1 404 Not Found");
-        // Body Not Found iceriyor mu testi yapiliyor
+        // Body Not Found iceriyor mu testi yapiliyor:
         assertTrue(response.asString().contains("Not Found"));
-        // Body'nin Techproed icermedigi testi yapiliyor
+
+        // Body'nin Techproed icermedigi testi yapiliyor:
         assertFalse(response.asString().contains("TechProEd"));
-        // Server'in Cowboy olup olmadigini test ediyoruz
+
+        // Server'in Cowboy olup olmadigini test ediyoruz:
         assertEquals("Cowboy", response.getHeader("Server"));
 
     }
