@@ -1,4 +1,4 @@
-import get_request.JsonplaceholderBaseUrl;
+import base_url.JsonplaceholderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
