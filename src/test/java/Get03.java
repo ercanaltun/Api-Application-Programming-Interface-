@@ -1,7 +1,10 @@
+import get_request.JsonplaceholderBaseUrl;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 public class Get03 extends JsonplaceholderBaseUrl {
 
@@ -28,6 +31,13 @@ public class Get03 extends JsonplaceholderBaseUrl {
         // Set The URL
 
         spec.pathParams("first", "todos", "second", 23);
+        /*
+        spec.pathParams("first", "todos", "second", 23);
+    //pathParams kullanma sebebimiz bir den fazla url eklentisi
+    olmasi /todos ve /23 ornegin bu url de
+    //eger tek bir eklenti olsaydi o zaman pathParam kullanacaktik,
+    yani /todos tan sonra baska bir sey olmasaydi mesela.
+         */
 
         // Expected Data
 
@@ -35,6 +45,27 @@ public class Get03 extends JsonplaceholderBaseUrl {
 
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
+
+        //1.Yol:
+        //Do Assertion
+        response.then().assertThat().statusCode(200).contentType("application/json")
+                .body("title", equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))
+                .body("completed", equalTo(false))
+                .body("userId", equalTo(2));
+
+        //2:Yol:
+        response.then().assertThat()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"),
+                        "completed",equalTo(false),"userId",equalTo(2));
+     /*
+    Soft assert testi gerçekleştirir ve assert başarısız olursa
+    hata fırlatma gerçekleştirmez.
+    Hard assert anında hata fırlatır, sonrasında test işlemine devam eder
+    */
+
+
 
 
     }
