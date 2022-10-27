@@ -1,9 +1,10 @@
+import get_request.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class Example02 extends restfulBaseUrl{
+public class Example02 extends RestfulBaseUrl {
 
         /* Given
             https://restful-booker.herokuapp.com/booking/1
