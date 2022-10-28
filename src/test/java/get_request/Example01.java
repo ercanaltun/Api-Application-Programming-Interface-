@@ -29,6 +29,8 @@ public class Example01 {
 
         //2.When
         // User sends a GET Request to the url=>Ama burada herhangi
+
+
         // bir değişiklik ve işlem istemiyor.Oyuzden bu kısmı atlıyoruz.
 
         // 3. Type code to send request ( Talep gondermek icin kod yazimi)
@@ -40,6 +42,8 @@ public class Example01 {
 
 
     }
+
+
 
 
 }
