@@ -28,12 +28,14 @@ public class Example02 extends RestfulBaseUrl {
 
     @Test
     public void test1() {
+
         //Set the Url
         spec.pathParams("first","booking","second",1);
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
         // ii) Set the expected Data (beklenen datanin olusturulmasi, Post, Put, Patch)
+
         // iii) Type code to send request ( Talep gondermek icin kod yazimi)
         response.then().assertThat().statusCode(404)  //=>statusCode'un 404 olduğu test ediliyor
             .statusLine("HTTP/1.1 404 Not Found"); //=>statusLine'nın=>HTTP/1.1 404 Not Found olduğu test ediliyor
@@ -51,4 +53,5 @@ public class Example02 extends RestfulBaseUrl {
 
 
     }
+
 }
