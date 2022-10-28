@@ -22,6 +22,7 @@ And
 
     @Test
     public void get01() {
+
         // https://restful-booker.herokuapp.com/booking?firstname=Ali&lastname=Cengiz =>istenen url
 
         //1.Set the Url
@@ -30,9 +31,11 @@ And
         //query =>url deki '?'(soru işareti demek)
 
         //2.Set thr expected data(put,patch,post yapılacak bir işlem yok burda)
+
         //3.Send the Requset and get the Response
         Response response = given().spec(spec).when().get("/{first}");
         response.prettyPrint();
+
 
         //4.Do Assertion
         assertEquals(200, response.getStatusCode());
