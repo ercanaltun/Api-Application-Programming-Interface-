@@ -6,11 +6,11 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 
 
-public class Example01 {
+public class Example01A {
 
             /*
-    Given
-            https://restful-booker.herokuapp.com/booking/101
+    Given   "https://jsonplaceholder.typicode.com/todos/99"
+
         When
             User sends a GET Request to the url
         Then
