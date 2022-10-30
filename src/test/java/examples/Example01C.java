@@ -38,5 +38,10 @@ public class Example01C extends JsonplaceholderBaseUrl {
         response.then().assertThat().statusCode(200)
                 .contentType(ContentType.JSON)
                 .statusLine("HTTP/1.1 200 OK");
+
+
     }
+
+
+
 }
