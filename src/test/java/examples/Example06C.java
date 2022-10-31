@@ -35,7 +35,7 @@ public class Example06C extends RestfulBaseUrl {
      */
 
     //First Step:Set the Url
-    //Second Step:Set The Expected Data
+    //Second Step:Set The Expected Data(Payload)
     //Third Step:Send The Request and Get The Response
     //Fourth Step:Do Assertion
 
