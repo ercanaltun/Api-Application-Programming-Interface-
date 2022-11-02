@@ -1,4 +1,4 @@
-package examples.firstweek;
+package examples.secondweek;
 
 import base_url.JsonplaceholderBaseUrl;
 import io.restassured.response.Response;
