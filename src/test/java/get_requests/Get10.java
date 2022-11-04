@@ -1,4 +1,4 @@
-package get_request;
+package get_requests;
 
 import base_url.GoRestBaseUrl;
 import io.restassured.response.Response;
@@ -43,7 +43,7 @@ public class Get10 extends GoRestBaseUrl {
         System.out.println(expectedData);
 
         Response response = given().spec(spec).when().get("/{first}/{second}");
-        response.prettyPrint();
+       // response.prettyPrint();
 
         Map<String,Object> actualData = response.as(HashMap.class);
         System.out.println("actualData = " + actualData);

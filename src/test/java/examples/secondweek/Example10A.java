@@ -1,7 +1,15 @@
 package examples.secondweek;
 
 import base_url.GoRestBaseUrl;
+import io.restassured.response.Response;
 import org.junit.Test;
+import test_data.GoRestTestData;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static io.restassured.RestAssured.given;
+import static org.junit.Assert.*;
 
 public class Example10A extends GoRestBaseUrl {
 
@@ -34,12 +42,41 @@ public class Example10A extends GoRestBaseUrl {
         spec.pathParams("first","users","second",2986);
 
         //Second Step:Set The Expected Data(Payload)
-
-
+        GoRestTestData obje=new GoRestTestData();
+        Map<String,String> dataMap=obje.dataKeyMap("Navin Talwar","navin_talwar@mclaughlin.name","male","inactive");
+        Map<String,Object> expectedDatas=obje.expectedDataMethod(null,dataMap);
+        System.out.println("expectedDatas = " + expectedDatas);
 
 
         //Third Step:Send The Request and Get The Response
+        Response response=given().spec(spec).when().get("/{first}/{second}");
+       // response.prettyPrint();
         
         //Fourth Step:Do Assertion
+        Map<String,Object>actualDatas=response.as(HashMap.class);
+        System.out.println("actualDatas = " + actualDatas);
+        assertEquals(expectedDatas.get("meta"),actualDatas.get("meta"));
+        assertEquals(dataMap.get("name"),((Map)actualDatas.get("data")).get("name"));
+        assertEquals(dataMap.get("email"),((Map)actualDatas.get("data")).get("email"));
+        assertEquals(dataMap.get("gender"),((Map)actualDatas.get("data")).get("gender"));
+        assertEquals(dataMap.get("status"),((Map)actualDatas.get("data")).get("status"));
+        assertEquals(200,response.statusCode());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
