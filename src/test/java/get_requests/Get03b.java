@@ -1,4 +1,4 @@
-package get_request;
+package get_requests;
 import base_url.ReqresBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;

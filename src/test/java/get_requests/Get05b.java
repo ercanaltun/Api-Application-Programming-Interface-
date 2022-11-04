@@ -1,4 +1,4 @@
-package get_request;
+package get_requests;
 
 import base_url.ReqresBaseUrl;
 import io.restassured.path.json.JsonPath;
@@ -7,7 +7,6 @@ import org.junit.Test;
 import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.*;
-import static org.junit.Assert.*;
 
 public class Get05b extends ReqresBaseUrl {
 
