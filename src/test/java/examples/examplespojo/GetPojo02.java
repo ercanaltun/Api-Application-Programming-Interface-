@@ -1,4 +1,4 @@
-package get_requests;
+package examples.examplespojo;
 
 import base_url.RestfulBaseUrl;
 import io.restassured.response.Response;
@@ -9,8 +9,9 @@ import pojos.BookingPojo;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Get12Pojo extends RestfulBaseUrl {
-    /*
+public class GetPojo02 extends RestfulBaseUrl {
+
+        /*
        Given
            https://restful-booker.herokuapp.com/booking/13
        When
@@ -31,23 +32,24 @@ public class Get12Pojo extends RestfulBaseUrl {
     "additionalneeds": "No cleaning"
 }
     */
+
     @Test
-    public void get12Pojo(){
+    public void Getpojo02() {
+
         //Set the Url
         spec.pathParams("first","booking","second",13);
 
-        //Set the Expected Data
-        BookingDatePojo bookingDatesPojo = new BookingDatePojo("2018-01-01","2019-01-01");
-        System.out.println(bookingDatesPojo.toString());
-        BookingPojo expectedData = new BookingPojo("Batman","Sevilla",111,true,bookingDatesPojo,"No cleaning");
+        //Set the Expected Data(Payload)
+        BookingDatePojo bookingdates=new BookingDatePojo("2018-01-01","2019-01-01");
+        BookingPojo expectedData= new BookingPojo("Batman","Sevilla",111,true,bookingdates,"No cleaning");
         System.out.println("expectedData = " + expectedData);
 
-        // Send the Request and Get the responce
+        //Send the Request and Get Response
         Response response=given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
-        //Do assertion
-        BookingPojo actualData= response.as(BookingPojo.class);
+        //Do Assertion
+        BookingPojo actualData=response.as(BookingPojo.class);
         System.out.println("actualData = " + actualData);
 
         assertEquals(200,response.statusCode());
@@ -55,17 +57,7 @@ public class Get12Pojo extends RestfulBaseUrl {
         assertEquals(expectedData.getLastname(),actualData.getLastname());
         assertEquals(expectedData.getTotalprice(),actualData.getTotalprice());
         assertEquals(expectedData.getDepositpaid(),actualData.getDepositpaid());
-        assertEquals(expectedData.getAdditionalneeds(),actualData.getAdditionalneeds());
-        //1.Yol ( İnner için )
-        assertEquals(expectedData.getBookingdates().getCheckin(),actualData.getBookingdates().getCheckin());
-        assertEquals(expectedData.getBookingdates().getCheckout(),actualData.getBookingdates().getCheckout());
-
-        //2.Yol ( İnner için ) Tavsiye edilen
-        assertEquals(bookingDatesPojo.getCheckin(),actualData.getBookingdates().getCheckin());
-        assertEquals(bookingDatesPojo.getCheckout(),actualData.getBookingdates().getCheckout());
-
+        assertEquals(bookingdates.getCheckin(),actualData.getBookingdates().getCheckin());
+        assertEquals(bookingdates.getCheckout(),actualData.getBookingdates().getCheckout());
     }
-
 }
-
-
