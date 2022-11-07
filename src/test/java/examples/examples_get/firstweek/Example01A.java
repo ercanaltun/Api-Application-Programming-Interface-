@@ -33,15 +33,22 @@ public class Example01A {
 
         // bir değişiklik ve işlem istemiyor.Oyuzden bu kısmı atlıyoruz.
 
+
         // 3. Type code to send request ( Talep gondermek icin kod yazimi)
         Response response = given().when().get(url);
         response.prettyPrint();  //soutprint görevi görüyor
+
 
         // 4. Do Assertion (dogrulama yapmak)
         response.then().assertThat().statusCode(200).contentType("application/json").statusLine("HTTP/1.1 200 OK");
 
 
+
     }
+
+
+
+
 
 
 

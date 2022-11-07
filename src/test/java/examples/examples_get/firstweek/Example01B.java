@@ -9,6 +9,7 @@ import static io.restassured.RestAssured.*;
 
 public class Example01B extends JsonplaceholderBaseUrl {
 
+
                 /*
         Given
             "https://jsonplaceholder.typicode.com/todos/101"
