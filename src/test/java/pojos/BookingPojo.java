@@ -3,7 +3,10 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class BookingPojo {
+
+
 
     private String firstname;
     private String lastname;
@@ -73,6 +76,7 @@ public class BookingPojo {
     }
 
     @Override
+
     public String toString() {
         return "BookingPojo{" +
                 "firstname='" + firstname + '\'' +
@@ -83,4 +87,8 @@ public class BookingPojo {
                 ", additionalneeds='" + additionalneeds + '\'' +
                 '}';
     }
+
+
+
+
 }

@@ -5,11 +5,13 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class GoRestDataPojo {
 
+
     private Integer id;
     private String name;
     private String email;
     private String gender;
     private String status;
+
 
     public GoRestDataPojo(Integer id, String name, String email, String gender, String status) {
         this.id = id;
@@ -21,6 +23,7 @@ public class GoRestDataPojo {
 
     public GoRestDataPojo() {
     }
+
 
     public Integer getId() {
         return id;
@@ -70,7 +73,12 @@ public class GoRestDataPojo {
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
                 ", status='" + status + '\'' +
+
                 '}';
     }
+
+
+
+
 }
 

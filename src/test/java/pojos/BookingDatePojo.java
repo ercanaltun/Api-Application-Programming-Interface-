@@ -5,6 +5,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatePojo {
 
+
     //1) Tüm keyler için private variable'lar oluşturuyoruz.
     private String checkin;
     private String checkout;
@@ -14,6 +15,7 @@ public class BookingDatePojo {
         this.checkin = checkin;
         this.checkout = checkout;
     }
+
 
     public BookingDatePojo() {
     }
@@ -38,6 +40,7 @@ public class BookingDatePojo {
     //4) toString() methodunu oluşturuyoruz.
 
 
+
     @Override
     public String toString() {
         return "BookingDatesPojo{" +
@@ -45,4 +48,8 @@ public class BookingDatePojo {
                 ", checkout='" + checkout + '\'' +
                 '}';
     }
+
+
+
+
 }
