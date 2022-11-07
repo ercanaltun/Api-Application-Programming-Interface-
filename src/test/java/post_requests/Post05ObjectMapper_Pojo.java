@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import pojos.JsonPlaceHolderPojo;
-import test_data.utils.ObjectMapperUtils;
+import utils.ObjectMapperUtils;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;

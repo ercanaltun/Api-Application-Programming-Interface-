@@ -1,4 +1,4 @@
-package test_data.utils;
+package utils;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
