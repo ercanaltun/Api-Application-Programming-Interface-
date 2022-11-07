@@ -3,6 +3,7 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+
 public class TodosUserPojo {
 
     private Integer userId;
@@ -17,7 +18,9 @@ public class TodosUserPojo {
         this.title=title;
         this.completed=completed;
 
+
     }
+
     public TodosUserPojo(){}
 
     public Integer getUserId() {
@@ -40,6 +43,7 @@ public class TodosUserPojo {
         return title;
     }
 
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -61,4 +65,9 @@ public class TodosUserPojo {
                 ", completed=" + completed +
                 '}';
     }
+
+
+
+
+
 }
