@@ -14,6 +14,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 public class Put01 extends JsonplaceholderBaseUrl {
+
     /*
         Given
 	        1) https://jsonplaceholder.typicode.com/todos/198
@@ -57,4 +58,10 @@ public class Put01 extends JsonplaceholderBaseUrl {
 
 
     }
+
+
+
+
+
+
 }
