@@ -28,10 +28,13 @@ public class Example01B extends JsonplaceholderBaseUrl {
         //1.Step:Set the Url
         spec.pathParams("first","todos","second",101);
 
+
         //2.Step:Set the Expected data
+
 
         //3.Step:Send the Request and Get the Response
         Response response=given().spec(spec).when().get("/{first}/{second}");
+
 
         //4.Do Assertion
         response.then().assertThat().statusCode(200).
@@ -41,4 +44,6 @@ public class Example01B extends JsonplaceholderBaseUrl {
 
 
     }
+
+
 }
