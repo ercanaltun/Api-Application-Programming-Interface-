@@ -23,16 +23,20 @@ public class Example01D extends JsonplaceholderBaseUrl {
             Status Line should be HTTP/1.1 200 OK
      */
 
+
     @Test
     public void test01D() {
 
         //1.Step:Set the Url
         spec.pathParams("first","todos","second",99);
 
+
         //2.Step:Set the Expected Data(Payload)
+
 
         //3.Step:Send the Request and Get the Response
         Response response=given().spec(spec).when().get("/{first}/{second}");
+
 
         //4.Step:Do Assertion
         assertEquals(200,response.statusCode());
@@ -40,4 +44,6 @@ public class Example01D extends JsonplaceholderBaseUrl {
 
 
     }
+
+
 }
