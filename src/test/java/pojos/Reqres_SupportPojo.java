@@ -1,5 +1,8 @@
 package pojos;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Reqres_SupportPojo {
 
     private String url;
@@ -8,6 +11,9 @@ public class Reqres_SupportPojo {
     public Reqres_SupportPojo(String url, String text) {
         this.url = url;
         this.text = text;
+    }
+
+    public Reqres_SupportPojo() {
     }
 
     public String getUrl() {
