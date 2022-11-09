@@ -13,6 +13,10 @@ import static org.junit.Assert.assertEquals;
 
 public class GetPojo_Reqres extends ReqresBaseUrl {
 /*
+       URL: https://reqres.in/api/users/1
+
+       HTTP Request Method: Get Request
+       Request body:
 {
    {
     "data": {
@@ -26,7 +30,51 @@ public class GetPojo_Reqres extends ReqresBaseUrl {
         "url": "https://reqres.in/#support-heading",
         "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
     }
+
+     Test Case: Type by using Gherkin Language
+       Assert:
+                i) Status code is 200
+                ii) Response body should be like the following
+                   {
+    "data": {
+        "id": 1,
+        "email": "george.bluth@reqres.in",
+        "first_name": "George",
+        "last_name": "Bluth",
+        "avatar": "https://reqres.in/img/faces/1-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
 }
+     Given =>URL: https://reqres.in/api/users/1
+     And   =>Get Requast Body:
+                                   {
+                                    "data": {
+                                        "id": 1,
+                                        "email": "george.bluth@reqres.in",
+                                        "first_name": "George",
+                                        "last_name": "Bluth",
+                                        "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                                    },
+                                    "support": {
+                                        "url": "https://reqres.in/#support-heading",
+                                        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+                                    }
+     Then => Status code shoulde be 200
+     And  =>Response Body should be like follwing:                                    {
+                                                    "data": {
+                                                        "id": 1,
+                                                        "email": "george.bluth@reqres.in",
+                                                        "first_name": "George",
+                                                        "last_name": "Bluth",
+                                                        "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                                                    },
+                                                    "support": {
+                                                        "url": "https://reqres.in/#support-heading",
+                                                        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+                                                    }
  */
     @Test
     public void test01() {
