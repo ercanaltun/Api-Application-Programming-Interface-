@@ -59,11 +59,13 @@ public class Reqres_DataPojo {
         return avatar;
     }
 
+
     public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 
     @Override
+
     public String toString() {
         return "Reqres_DataPojo{" +
                 "id=" + id +
@@ -73,4 +75,7 @@ public class Reqres_DataPojo {
                 ", avatar='" + avatar + '\'' +
                 '}';
     }
+
+
+
 }

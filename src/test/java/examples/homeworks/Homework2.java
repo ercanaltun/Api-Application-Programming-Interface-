@@ -55,7 +55,7 @@ public class Homework2 extends ReqresBaseUrl {
         Response response=given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
 
         //Do Assertion
-       Reqres_Name_Job_Pojo actualdata=ObjectMapperUtils.convertJsonToJava(response.asString(),Reqres_Name_Job_Pojo.class);
+        Reqres_Name_Job_Pojo actualdata=ObjectMapperUtils.convertJsonToJava(response.asString(),Reqres_Name_Job_Pojo.class);
         assertEquals(201,response.statusCode());
         assertEquals(expectedData.getName(),actualdata.getName());
         assertEquals(expectedData.getJob(),actualdata.getJob());

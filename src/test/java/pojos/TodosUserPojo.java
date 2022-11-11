@@ -48,6 +48,7 @@ public class TodosUserPojo {
         this.title = title;
     }
 
+
     public Boolean getCompleted() {
         return completed;
     }
@@ -55,6 +56,7 @@ public class TodosUserPojo {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
+
 
     @Override
     public String toString() {
