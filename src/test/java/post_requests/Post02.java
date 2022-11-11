@@ -47,6 +47,8 @@ public class Post02 extends RestfulBaseUrl {
 */
 
 
+
+
     @Test
     public void testPut02() {
 
@@ -71,6 +73,7 @@ public class Post02 extends RestfulBaseUrl {
         assertEquals(expectedData.get("depositpaid"),((Map)actualData.get("booking")).get("depositpaid"));
         assertEquals(bookingdatesMap.get("checkin"),((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkin"));
         assertEquals(bookingdatesMap.get("checkout"),((Map)((Map)actualData.get("booking")).get("bookingdates")).get("checkout"));
+
 
 
 
