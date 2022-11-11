@@ -59,9 +59,15 @@ public class Get06b extends ReqresBaseUrl {
         List<String> names = json.getList("data.findAll{it.id<3}.name");
         System.out.println("names = " + names);
 
+
         //  Assert that the number of names whose ids are less than 3 is 2
         assertEquals(2, names.size());
 
 
+
     }
+
+
+
+
 }
